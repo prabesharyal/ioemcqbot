@@ -68,7 +68,7 @@ async function screenShot(browser,page){
     let expList = [];
     let processedSheet = [];
     for(let i = 0; i<el.length;i++){
-        if (i<95) continue;
+        // if (i<95) continue;
         console.log(`${i} done`)
         let img = await elScreenShot(browser,page,el[i],i);
         expList.push(img);
