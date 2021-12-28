@@ -107,5 +107,5 @@ async function screenShot(browser,page){
   writeFileSync(fpw,JSON.stringify(processedSheet))
   // writeFileSync('tmp/example.png',Buffer.from(processedSheet[98]['img']['question'],'base64'))
 
-  // await browser.close();
+  await browser.close();
 })();
