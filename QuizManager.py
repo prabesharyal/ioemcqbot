@@ -164,7 +164,7 @@ class QuizManager:
 			sc_form = c;
 			if sc_form < 4:
 				sc_form = ["🥇","🥈","🥉"][sc_form-1]
-			sc_msg += f"{str(sc_form)}.  <a href='tg://user?id={sc[0]}'>{sc[1]['username'] or sc[1]['first_name']}</a> - {sc[1]['score']} ({formatted_is_cur_time})\n"
+			sc_msg += f"{str(sc_form)}.  <a href='tg://user?id={sc[0]}'>{sc[1]['username'] or sc[1]['first_name']}</a> : {sc[1]['score']} ({formatted_is_cur_time})\n"
 		sc_msg += "\n\n🏆 Congratulations to the winners!"
 		# print(sc_msg)
 		self.sendm(sc_msg)
