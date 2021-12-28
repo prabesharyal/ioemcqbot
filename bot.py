@@ -64,7 +64,7 @@ def prefetch(update,context):
 		return
 	print('Prefetching ',nm)
 	prefetchState[nm] = {'running':True}
-	fetch_sheet(nm)
+	shot_page(nm)
 	print('Prefetch completed for  ',nm)
 	prefetchState[nm]['running'] = False
 	pass
