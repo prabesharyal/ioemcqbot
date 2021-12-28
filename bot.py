@@ -46,8 +46,11 @@ def authorized(update,context):
 	return False
 	pass
 
-def squiz(update, context):
-	# print(update)
+prefetchState = {}
+
+def prefetch(update,context):
+	if not authorized(update,context):
+		return 
 	sp = update.message.text.split(' ')
 	nm = 0
 	if len(sp) < 2:
@@ -56,8 +59,32 @@ def squiz(update, context):
 		nm = int(sp[1])
 	except:
 		return
+	if nm in prefetchState:
+		print('Already loaded or loading')
+		return
+	print('Prefetching ',nm)
+	prefetchState[nm] = {'running':True}
+	fetch_sheet(nm)
+	print('Prefetch completed for  ',nm)
+	prefetchState[nm]['running'] = False
+	pass
+
+
+prefetch_handler = CommandHandler('prefetch', prefetch)
+dispatcher.add_handler(prefetch_handler)
+
+
+def squiz(update, context):
 	if not authorized(update,context):
 		return 
+	sp = update.message.text.split(' ')
+	nm = 0
+	if len(sp) < 2:
+		return
+	try:
+		nm = int(sp[1])
+	except:
+		return
 	# print(nm)
 	# print('Authorized')
 	chat_id = update.effective_chat.id
