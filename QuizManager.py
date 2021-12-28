@@ -2,7 +2,6 @@
 
 from telegram import Update
 from telegram.ext import CallbackContext,Updater,CommandHandler,PollAnswerHandler
-import config
 from fetchsheet import fetch_sheet
 from screenshot import shot_page
 from threading import Thread
