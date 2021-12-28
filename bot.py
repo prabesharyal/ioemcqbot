@@ -39,6 +39,12 @@ dispatcher.add_handler(start_handler)
 
 appState = {}
 
+def authorized(update):
+	if update.message.from_user.username in admins:
+		return True
+	context.bot.send_message(chat_id=update.effective_chat.id, text=f"Unauthorized")
+	return False
+	pass
 
 def squiz(update, context):
 	# print(update)
@@ -50,10 +56,8 @@ def squiz(update, context):
 		nm = int(sp[1])
 	except:
 		return
-	if update.message.from_user.username not in admins:
-		# print('Unauthorized')
-		context.bot.send_message(chat_id=update.effective_chat.id, text=f"Unauthorized")
-		return
+	if not authorized(update,context):
+		return 
 	# print(nm)
 	# print('Authorized')
 	chat_id = update.effective_chat.id
@@ -68,9 +72,7 @@ def squiz(update, context):
 
 
 def stop(update,context):
-	if update.message.from_user.username not in admins:
-		# print('Unauthorized')
-		context.bot.send_message(chat_id=update.effective_chat.id, text=f"Unauthorized")
+	if not authorized(update):
 		return
 	chat_id = update.effective_chat.id
 	if chat_id not in appState or appState[chat_id].isRunning() == False:
