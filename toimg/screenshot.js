@@ -105,7 +105,7 @@ async function screenShot(browser,page){
   let fpw = path.join(path.resolve(),`./processedsheets/processed-${fsheetNum}.json`);
   console.log(fpw);
   writeFileSync(fpw,JSON.stringify(processedSheet))
-  // writeFileSync('')
+  // writeFileSync('tmp/example.png',Buffer.from(processedSheet[98]['img']['question'],'base64'))
 
-  await browser.close();
+  // await browser.close();
 })();

@@ -47,9 +47,9 @@
     }
     .questionm {
         width: 100%;
-        padding: 5px 5px 0px 5px;
         /*margin: 0;*/
-        padding-bottom: 1px;
+        /*padding-bottom: 1px;*/
+        padding: 3% 10px 2px 3%;
     }
 
     .options {
@@ -76,6 +76,7 @@
     .explaination {
         border-top: 1px solid #fff;
         margin-bottom: 20px;
+        padding: 3% 10px 2px 3%;
     }
     .hidden {
         display: none;
@@ -96,7 +97,7 @@
                 let template = `<div class="question">
                     <div class="questionm">
                         <div class="question-title" id="question-${i}">
-                            ${i}.) ${qn.quest_title}
+                            ${qn.quest_title}
                         </div>
                         <div class="options">
                             <div class="opt opt1">A.) ${qn.ans1_txt}</div>
