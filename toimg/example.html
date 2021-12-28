@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Explaination</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+    ::-webkit-scrollbar {
+        width: 0;
+        /* Remove scrollbar space */
+        background: transparent;
+        /* Optional: just make scrollbar invisible */
+    }
+
+    /* Optional: show position indicator in red */
+    ::-webkit-scrollbar-thumb {
+        background: #FF0000;
+    }
+
+    html {
+        width: 500px;
+        margin: 0;
+    }
+
+    body {
+        margin: 0;
+        background: #515253;
+        color: #fff;
+        font-family: sans;
+        /*overflow: hidden;*/
+        width: 100%;
+    }
+
+    #app {
+        width: 100%;
+    }
+
+    .question {
+        width: 100%;
+        padding: 5px 5px 0px 5px;
+        /*margin: 0;*/
+        padding-bottom: 1px;
+    }
+
+    .options {
+        margin: 14px 5%;
+        /*border: 0.5px solid #a1a2a3;*/
+        padding: 10px 5%;
+        /*border-radius: 5px;*/
+    }
+
+    .opt {
+        border: 0.5px solid #a1a2a3;
+        border-radius: 5px;
+        padding: 2px 5px;
+        margin: 2% 0%;
+        cursor: pointer;
+        /*transition: 0s;*/
+    }
+
+    .opt p {
+        margin: 5px;
+        display: inline-block;
+    }
+
+    .prev-explaination {
+        border-bottom: 1px solid #fff;
+        margin-bottom: 20px;
+    }
+    .hidden {
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="explaination">
+            <strong>
+                Explaination:
+            </strong>
+            <div>
+                ${explanation_txt}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

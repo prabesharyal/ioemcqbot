@@ -1,0 +1,8 @@
+# created by virtualenv automatically
+/node_modules
+/bin
+/lib
+/prepdeploy.bash
+/__pycache__
+/.env
+/BOT_API_HASH
