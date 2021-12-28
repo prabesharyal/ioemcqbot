@@ -7,3 +7,4 @@
 /.env
 /BOT_API_HASH
 /toimg/*.json
+/processedsheets/*.json
