@@ -31,6 +31,7 @@ print("Updater Invoked")
 admins = ["sholmes_O_O","PrabeshAryal"]
 
 def start(update: Update, context: CallbackContext):
+	print(update)
 	txt = update.message.text
 	context.bot.send_message(chat_id=update.effective_chat.id, text="Send /squiz <num> to start quiz")
 start_handler = CommandHandler('start', start)
@@ -40,8 +41,11 @@ dispatcher.add_handler(start_handler)
 appState = {}
 
 def authorized(update,context):
-	if update.message.from_user.username in admins:
+	m_stat = context.bot.get_chat_member(update.effective_chat.id, update.message.from_user.id)['status']
+	if m_stat != "member":
 		return True
+	# if update.message.from_user.username in admins:
+		# return True
 	context.bot.send_message(chat_id=update.effective_chat.id, text=f"Unauthorized")
 	return False
 	pass
