@@ -10,5 +10,5 @@ if os.path.isfile(hashFile):
 defappname = "mcqquizbot"
 
 TOKEN = os.environ.get('BOT_API_TOKEN') or deftok
-appname = os.environ.get('BOT_API_TOKEN') or defappname
+APP_NAME = os.environ.get('APP_NAME') or defappname
 print(TOKEN)
