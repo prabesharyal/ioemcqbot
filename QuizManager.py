@@ -29,7 +29,7 @@ class QuizManager:
 		self.question_count = 0
 		pass
 	def quiz_begin_msg(self,num):
-		msg = f"🎲 🎲 Get ready for the quiz <b>'@WePrepareQuiz-Daily-Quiz Series-{str(num)}'</b>\n"
+		msg = f"🎲 🎲 Get ready for the quiz <b>'@WePrepareIOE-Quiz-Daily-Quiz Series-{str(num)}'</b>\n"
 		msg += "\n"
 		msg += "🖊 <b>100</b> questions"
 		msg += "\n"
