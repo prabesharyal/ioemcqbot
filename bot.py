@@ -158,7 +158,7 @@ print('Starting Polling')
 production = (PORT != 5000)
 print("Production Server" if production else "Development Server")
 if production == True:
-	mywebserver = "https://mcqquizbot.herokuapp.com/"
+	mywebserver = f"https://{config.APP_NAME}.herokuapp.com/"
 	updater.start_webhook(listen="0.0.0.0", port=int(PORT), url_path=config.TOKEN,webhook_url=mywebserver+config.TOKEN)
 	updater.idle()
 else:
