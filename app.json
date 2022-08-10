@@ -9,5 +9,16 @@
         "BOT_API_TOKEN": {
             "description": "Enter bot api token from telegram"
         }
-    }
+    },
+    "buildpacks": [
+        {
+            "url": "heroku/nodejs"
+        },
+        {
+            "url": "heroku/python"
+        },
+        {
+            "url": "https://buildpack-registry.s3.amazonaws.com/buildpacks/jontewks/puppeteer.tgz"
+        }
+    ]
 }
