@@ -20,4 +20,4 @@ if os.environ.get("ADMINS_LIST"):
 
 print(TOKEN)
 print(APP_NAME)
-
+print(ADMINS)
