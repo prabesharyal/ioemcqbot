@@ -28,7 +28,7 @@ dispatcher = updater.dispatcher
 
 print("Updater Invoked")
 
-admins = ["sholmes_O_O","PrabeshAryal"]
+admins = config.ADMINS
 
 def start(update: Update, context: CallbackContext):
 	print(update)
