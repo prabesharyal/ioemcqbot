@@ -82,8 +82,9 @@ dispatcher.add_handler(prefetch_handler)
 def squiz(update, context):
 	if not authorized(update,context):
 		return 
-	sp = re.sub("\s\s+" , " ", sp)
+	
 	sp = update.message.text.split(' ')
+	sp = re.sub("\s\s+" , " ", sp)
 	nm = 0
 	if len(sp) < 2:
 		return
