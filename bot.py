@@ -83,8 +83,8 @@ def squiz(update, context):
 	if not authorized(update,context):
 		return 
 	
-	sp = update.message.text.split(' ')
-	sp = re.sub("\s\s+" , " ", sp)
+	sp = update.message.text
+	sp = re.sub("\s\s+" , " ", sp).split(' ')
 	nm = 0
 	if len(sp) < 2:
 		return
