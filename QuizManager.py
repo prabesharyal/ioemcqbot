@@ -157,6 +157,8 @@ class QuizManager:
 		c = 0
 		for sc in scorelist:
 			c+=1
+			if c>40:
+				break
 			# print(sc)
 			is_cur_time = sc[1]['timetaken']
 			formatted_is_cur_time = strfdelta(datetime.timedelta(seconds=is_cur_time),"%M min %S sec")
