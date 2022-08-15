@@ -1,6 +1,7 @@
 
 print("Program started")
 
+import re
 from telegram import Update
 from telegram.ext import CallbackContext,Updater,CommandHandler,PollAnswerHandler
 import config
@@ -81,6 +82,7 @@ dispatcher.add_handler(prefetch_handler)
 def squiz(update, context):
 	if not authorized(update,context):
 		return 
+	sp = re.sub("\s\s+" , " ", sp)
 	sp = update.message.text.split(' ')
 	nm = 0
 	if len(sp) < 2:
@@ -89,6 +91,12 @@ def squiz(update, context):
 		nm = int(sp[1])
 	except:
 		return
+	mx = 100
+	try:
+		mx = int(sp[2])
+	except:
+		pass
+	
 	# print(nm)
 	# print('Authorized')
 	chat_id = update.effective_chat.id
@@ -98,6 +106,7 @@ def squiz(update, context):
 			context.bot.send_message(chat_id=chat_id, text=f"Quiz is already begun.")
 			return
 	qm = QuizManager(update, context, {'sheet_no':nm})
+	qm.maxq_count = mx
 	qm.startQuiz()
 	appState[update.effective_chat.id] = qm
 

@@ -27,6 +27,7 @@ class QuizManager:
 		self.timed_explaination = None
 		self.pollsInfo = {}
 		self.question_count = 0
+		self.maxq_count = 100
 		pass
 	def quiz_begin_msg(self,num):
 		msg = f"🎲 🎲 Get ready for the quiz <b>'@WePrepareIOE-Quiz-Daily-Quiz Series-{str(num)}'</b>\n"
@@ -70,7 +71,7 @@ class QuizManager:
 	def sendPollHandle(self,i):
 		if not self.running:
 			return
-		if i > 99:
+		if i > 99 or i >= self.maxq_count:
 			self.stopQuiz()
 			return
 		opentime = self.sendPoll(i)
