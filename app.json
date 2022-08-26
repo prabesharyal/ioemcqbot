@@ -3,11 +3,8 @@
     "description": "This app does one little thing, prepares you for IOE",
     "repository": "https://github.com/FrozenCoder57/mcqquizbot/",
     "env":{
-        "APP_NAME": {
-            "description":"enter the name of heroku app/subdomain initial"
-        },
         "BOT_API_TOKEN": {
-            "description": "Enter bot api token from telegram"
+            "description": "Enter Bot API Token from BotFather"
         }
     },
     "buildpacks": [
